@@ -1,0 +1,7 @@
+HOST = "127.0.0.1"
+PORT = "5000"
+DEBUG = True
+CSRF_ENABLED = True
+SQL_URI = "sqlite:///test.db"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SECRET_KEY = "secret"

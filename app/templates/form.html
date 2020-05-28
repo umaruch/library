@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for( 'static', filename = '/css/bootstrap.min.css' ) }}" media="screen">
+    </head>
+    <body>
+        <div class="content">
+            <h1>{{ title }}</h1>
+           <form method="POST" action="{{ url }}">
+               {{ form.hidden_tag() }}
+                {% for field in form if field.id != 'csrf_token' %}
+                {{ field.label }}
+                {{ field }}
+                {% endfor %}
+                <input type="submit" value="Добавить"> 
+           </form>
+        </div>
+    </body>
+</html>

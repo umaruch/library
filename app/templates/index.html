@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% if not current_user.is_anonymous %}
+    <a href="{{ add_url }}">
+      <button type="button" class="btn btn-secondary">Добавить</button>
+    </a>
+    {% endif %}
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            {% for title in titles %}
+                <th scope="col">{{ title }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody id="table_elements">
+          <script>
+            loadContent("{{ url }}")
+          </script>
+        </tbody>
+      </table>
+</div>
+{% endblock %}

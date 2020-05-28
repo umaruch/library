@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for( 'static', filename = '/css/bootstrap.min.css' ) }}" media="screen">
+    </head>
+    <body>
+       <div class="content">
+           <h1>{{ title }}</h1>
+           <form method="POST" action="{{ url_for('login') }}">
+               {{ form.csrf_token }}
+                {{ form.name.label}}{{ form.name(size = 20)}}
+                {{ form.password.label}}{{ form.password(size = 20)}}
+                <input type="submit" value="Логин"> 
+           </form>
+       </div> 
+    </body>
+</html>
